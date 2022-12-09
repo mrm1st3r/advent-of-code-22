@@ -15,12 +15,12 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
     .toString(16)
     .padStart(32, '0')
 
-class Puzzle<T>(
+class Puzzle<T1, T2>(
     private val directory: String,
-    private val part1: (List<String>) -> T,
-    private val part1TestResult: T,
-    private val part2: (List<String>) -> T,
-    private val part2TestResult: T,
+    private val part1: (List<String>) -> T1,
+    private val part1TestResult: T1,
+    private val part2: (List<String>) -> T2,
+    private val part2TestResult: T2,
     ) {
 
     fun test() {
